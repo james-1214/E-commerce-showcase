@@ -1,0 +1,276 @@
+/* ============================================
+   GALAXY UNIVERSE EXPERIENCE — SCOPED STYLES
+   All styles are scoped under .galaxy-experience
+   so they do NOT bleed into the COR homepage.
+   ============================================ */
+
+/* Typography & Labels */
+.galaxy-experience .label {
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  background: linear-gradient(90deg, #00f2fe, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.galaxy-experience .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 2rem;
+  border: 1px solid rgba(0, 242, 254, 0.65);
+  color: var(--white);
+  background: linear-gradient(135deg, rgba(0, 242, 254, 0.18), rgba(168, 85, 247, 0.28));
+  backdrop-filter: blur(10px);
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 25px rgba(0, 242, 254, 0.28), 0 0 50px rgba(168, 85, 247, 0.18);
+  border-radius: 6px;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+}
+.galaxy-experience .btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+.galaxy-experience .btn:hover::before { transform: translateX(100%); }
+.galaxy-experience .btn:hover {
+  background: linear-gradient(135deg, rgba(0, 242, 254, 0.3), rgba(236, 72, 153, 0.35));
+  border-color: #00f2fe;
+  box-shadow: 0 0 35px rgba(0, 242, 254, 0.55), 0 0 60px rgba(236, 72, 153, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Navigation Bar (Galaxy's own nav) */
+.galaxy-experience .nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem clamp(1.2rem, 4.5vw, 3.8rem);
+  background: linear-gradient(to bottom, rgba(3, 5, 17, 0.92), transparent);
+  backdrop-filter: blur(8px);
+}
+.galaxy-experience .nav .logo { margin:0; color:var(--white); font-weight:800; text-decoration:none; font-size:1.1rem; letter-spacing:0.18em; }
+.galaxy-experience .nav .logo span { background:linear-gradient(90deg,#00f2fe,#a855f7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-left:0.35em; font-weight:400; }
+.galaxy-experience .nav-actions { display:flex; align-items:center; gap:1.5rem; }
+.galaxy-experience .nav-links a { color:var(--silver); text-decoration:none; font-size:0.7rem; letter-spacing:0.22em; margin-left:1.8rem; transition:all 0.2s ease; font-weight:600; position:relative; }
+.galaxy-experience .nav-links a:hover { color:#00f2fe; text-shadow:0 0 12px rgba(0,242,254,0.8); }
+.galaxy-experience .theme-toggle-btn { display:inline-flex; align-items:center; gap:0.45rem; padding:0.4rem 0.85rem; border-radius:999px; background:rgba(255,255,255,0.08); border:1px solid rgba(0,242,254,0.4); color:var(--white); font-size:0.65rem; letter-spacing:0.16em; font-weight:700; cursor:pointer; transition:all 0.25s ease; backdrop-filter:blur(8px); }
+.galaxy-experience .theme-toggle-btn:hover { background:rgba(0,242,254,0.2); border-color:#00f2fe; box-shadow:0 0 15px rgba(0,242,254,0.4); transform:translateY(-1px); }
+.galaxy-experience .theme-toggle-icon { font-size:0.85rem; }
+
+/* Track & Sticky Viewport */
+.galaxy-experience .track { height: 700vh; position: relative; }
+.galaxy-experience .stick { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
+.galaxy-experience .stick>canvas,
+.galaxy-experience .stick>div:first-child { position: absolute !important; inset: 0; }
+
+/* Hero Section */
+.galaxy-experience .hero-copy { position:absolute; left:clamp(1.5rem,6vw,6.5rem); bottom:12vh; z-index:5; max-width:min(92vw,660px); pointer-events:none; text-shadow:0 2px 30px rgba(3,5,17,0.9); transition:opacity 0.3s ease; }
+.galaxy-experience .hero-copy a, .galaxy-experience .hero-copy button, .galaxy-experience .hero-copy .hero-badge { pointer-events: auto; }
+.galaxy-experience .hero-btn-secondary { background:rgba(255,255,255,0.06); border:1px solid rgba(0,242,254,0.5); box-shadow:0 0 20px rgba(0,242,254,0.15); }
+.galaxy-experience .hero-btn-secondary:hover, .galaxy-experience .hero-btn-secondary.is-active { background:linear-gradient(135deg,rgba(0,242,254,0.3),rgba(168,85,247,0.35)); border-color:#00f2fe; box-shadow:0 0 30px rgba(0,242,254,0.5); }
+.galaxy-experience .hero-badge { display:inline-flex; align-items:center; gap:0.5rem; padding:0.4rem 0.85rem; border-radius:999px; background:linear-gradient(135deg,rgba(0,242,254,0.15),rgba(168,85,247,0.18)); border:1px solid rgba(0,242,254,0.45); box-shadow:0 0 18px rgba(0,242,254,0.25); font-size:0.65rem; letter-spacing:0.2em; color:#00f2fe; margin-bottom:0.9rem; }
+.galaxy-experience .hero-dot { width:7px; height:7px; border-radius:50%; background:#00f2fe; box-shadow:0 0 10px #00f2fe,0 0 20px #a855f7; animation:pulseDot 2s infinite; }
+.galaxy-experience .hero-copy h1 { font-size:clamp(2.8rem,8.5vw,6.8rem); line-height:0.95; font-weight:900; letter-spacing:0.02em; margin:0.8rem 0; background:linear-gradient(135deg,#ffffff 10%,#67e8f9 35%,#c084fc 65%,#f472b6 95%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; filter:drop-shadow(0 0 45px rgba(168,85,247,0.4)); }
+.galaxy-experience .hero-copy p { color:#d1e2f7; letter-spacing:0.28em; font-size:clamp(0.7rem,1.3vw,0.88rem); margin-bottom:0.5rem; }
+.galaxy-experience .hero-cta-group { margin-top:1.8rem; display:flex; gap:1rem; }
+.galaxy-experience .scroll-ind { position:absolute; left:0; bottom:-7vh; display:flex; align-items:center; gap:0.8rem; font-size:0.62rem; letter-spacing:0.25em; color:var(--silver); }
+.galaxy-experience .scroll-ind i { width:2px; height:38px; background:linear-gradient(to bottom,#00f2fe,#a855f7,transparent); animation:drip 1.8s infinite; }
+
+/* Timeline Stage Caption */
+.galaxy-experience .caption { position:absolute; left:clamp(1.5rem,6vw,6rem); top:136px; z-index:4; display:flex; flex-direction:column; gap:0.35rem; pointer-events:none; animation:fadeIn 0.4s ease; }
+.galaxy-experience .caption b { font-weight:300; font-size:clamp(1.1rem,2.2vw,1.65rem); letter-spacing:0.04em; color:#ffffff; }
+.galaxy-experience .caption-sub { font-size:0.65rem; letter-spacing:0.22em; background:linear-gradient(90deg,#00f2fe,#a855f7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-top:0.2rem; font-weight:600; }
+
+/* Solo Mode Top Banner */
+.galaxy-experience .solo-hud-banner { position:absolute; top:90px; left:50%; transform:translateX(-50%); z-index:20; display:flex; align-items:center; gap:0.6rem; padding:0.45rem 1.2rem; background:linear-gradient(135deg,rgba(8,16,40,0.85),rgba(28,12,48,0.85)); border:1px solid rgba(0,242,254,0.55); border-radius:999px; backdrop-filter:blur(14px); box-shadow:0 0 30px rgba(0,242,254,0.35),0 0 50px rgba(168,85,247,0.2); font-size:0.68rem; letter-spacing:0.2em; color:#00f2fe; animation:fadeDown 0.35s ease; pointer-events:none; font-weight:600; }
+.galaxy-experience .solo-pulse { width:8px; height:8px; border-radius:50%; background:#00f2fe; box-shadow:0 0 12px #00f2fe,0 0 22px #ec4899; animation:pulseDot 1.5s infinite; }
+
+/* 360° Orbit Controls */
+.galaxy-experience .orbit-controls-bar { position:absolute; top:85px; left:clamp(1.2rem,4vw,3.5rem); z-index:20; display:flex; align-items:center; gap:0.5rem; padding:0.4rem 0.65rem; background:linear-gradient(135deg,rgba(7,16,38,0.85),rgba(26,10,48,0.85)); border:1px solid rgba(0,242,254,0.4); border-radius:999px; backdrop-filter:blur(16px); box-shadow:0 10px 30px rgba(0,0,0,0.6),0 0 25px rgba(0,242,254,0.2); animation:fadeDown 0.35s ease; }
+.galaxy-experience .orbit-btn { display:flex; align-items:center; gap:0.45rem; padding:0.4rem 0.85rem; background:linear-gradient(135deg,rgba(0,242,254,0.15),rgba(168,85,247,0.2)); border:1px solid rgba(0,242,254,0.5); border-radius:999px; color:#00f2fe; font-size:0.68rem; letter-spacing:0.16em; font-weight:700; cursor:pointer; transition:all 0.25s ease; white-space:nowrap; }
+.galaxy-experience .orbit-btn:hover, .galaxy-experience .orbit-btn.is-active { background:linear-gradient(135deg,rgba(0,242,254,0.35),rgba(236,72,153,0.4)); border-color:#00f2fe; color:#ffffff; box-shadow:0 0 20px rgba(0,242,254,0.6); }
+.galaxy-experience .orbit-icon { font-size:0.95rem; display:inline-block; }
+.galaxy-experience .orbit-btn.is-active .orbit-icon { animation:spinSlow 3s linear infinite; }
+.galaxy-experience .orbit-presets { display:flex; align-items:center; gap:0.25rem; border-left:1px solid rgba(255,255,255,0.15); padding-left:0.45rem; }
+.galaxy-experience .preset-btn { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12); color:var(--silver); padding:0.35rem 0.65rem; border-radius:999px; font-size:0.62rem; letter-spacing:0.14em; cursor:pointer; transition:all 0.2s ease; font-weight:600; }
+.galaxy-experience .preset-btn:hover { background:rgba(0,242,254,0.25); border-color:#00f2fe; color:#ffffff; }
+.galaxy-experience .orbit-hint { font-size:0.58rem; letter-spacing:0.16em; color:#7b94b0; padding:0 0.4rem; font-weight:600; display:none; }
+@media (min-width:1024px) { .galaxy-experience .orbit-hint { display:inline-block; } }
+
+/* Component Dock */
+.galaxy-experience .component-dock { position:absolute; bottom:2rem; left:50%; transform:translateX(-50%) translateY(30px); z-index:28; display:flex; flex-direction:column; align-items:center; gap:0.5rem; opacity:0; pointer-events:none; transition:all 0.35s cubic-bezier(0.16,1,0.3,1); }
+.galaxy-experience .component-dock.is-visible { opacity:1; pointer-events:auto; transform:translateX(-50%) translateY(0); }
+@media (min-width:1024px) { .galaxy-experience .component-dock.is-solo-mode { left:clamp(1.5rem,5vw,4.5rem); transform:translateY(0); align-items:flex-start; } }
+.galaxy-experience .dock-hint { font-size:0.6rem; letter-spacing:0.22em; background:linear-gradient(90deg,#00f2fe,#a855f7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; text-transform:uppercase; font-weight:700; }
+.galaxy-experience .dock-pill-group { display:flex; align-items:center; gap:0.45rem; padding:0.45rem 0.75rem; background:linear-gradient(135deg,rgba(8,16,38,0.85),rgba(28,10,48,0.85)); border:1px solid rgba(0,242,254,0.35); border-radius:999px; backdrop-filter:blur(18px); box-shadow:0 15px 40px rgba(0,0,0,0.75),0 0 35px rgba(168,85,247,0.25); max-width:95vw; overflow-x:auto; }
+.galaxy-experience .dock-btn { display:flex; align-items:center; gap:0.4rem; padding:0.45rem 0.9rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12); border-radius:999px; color:var(--silver); font-size:0.68rem; letter-spacing:0.12em; cursor:pointer; transition:all 0.25s ease; white-space:nowrap; }
+.galaxy-experience .dock-btn:hover { background:linear-gradient(135deg,rgba(0,242,254,0.25),rgba(168,85,247,0.25)); border-color:#00f2fe; color:var(--white); box-shadow:0 0 16px rgba(0,242,254,0.4); }
+.galaxy-experience .dock-btn.is-active { background:linear-gradient(135deg,rgba(0,242,254,0.35),rgba(236,72,153,0.4)); border-color:#00f2fe; color:var(--white); font-weight:700; box-shadow:0 0 20px rgba(0,242,254,0.6); }
+.galaxy-experience .dock-icon { font-size:0.82rem; color:#00f2fe; }
+
+/* Detail Panel */
+.galaxy-experience .detail-panel { position:absolute; z-index:30; right:clamp(1.2rem,4vw,3.5rem); top:50%; transform:translateY(-50%); width:min(450px,calc(100vw - 2.5rem)); max-height:calc(100vh - 120px); display:flex; flex-direction:column; padding:1.6rem; background:linear-gradient(160deg,rgba(8,16,40,0.94) 0%,rgba(26,12,48,0.94) 100%); border:1px solid rgba(0,242,254,0.45); border-radius:14px; backdrop-filter:blur(28px); box-shadow:0 30px 80px rgba(0,0,0,0.9),0 0 50px rgba(168,85,247,0.25),0 0 30px rgba(0,242,254,0.2); animation:fadeUp 0.35s ease; overflow:hidden; }
+.galaxy-experience .panel-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:0.7rem; flex-shrink:0; }
+.galaxy-experience .panel-tags { display:flex; flex-direction:column; gap:0.25rem; }
+.galaxy-experience .part-tag { font-size:0.65rem; letter-spacing:0.22em; font-weight:700; font-family:monospace; }
+.galaxy-experience .category-tag { font-size:0.58rem; letter-spacing:0.18em; color:#9cb3ce; text-transform:uppercase; font-weight:600; }
+.galaxy-experience .panel-header-actions { display:flex; align-items:center; gap:0.5rem; }
+.galaxy-experience .panel-spin-btn { display:flex; align-items:center; gap:0.35rem; padding:0.35rem 0.7rem; border-radius:999px; background:rgba(0,242,254,0.12); border:1px solid rgba(0,242,254,0.4); color:#00f2fe; font-size:0.65rem; letter-spacing:0.14em; font-weight:700; cursor:pointer; transition:all 0.2s ease; }
+.galaxy-experience .panel-spin-btn:hover, .galaxy-experience .panel-spin-btn.is-active { background:linear-gradient(135deg,rgba(0,242,254,0.3),rgba(236,72,153,0.35)); border-color:#00f2fe; color:#ffffff; box-shadow:0 0 15px rgba(0,242,254,0.5); }
+.galaxy-experience .panel-spin-btn.is-active .orbit-icon { animation:spinSlow 3s linear infinite; }
+.galaxy-experience .panel-close-btn { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:var(--silver); width:32px; height:32px; border-radius:50%; display:grid; place-items:center; cursor:pointer; font-size:0.85rem; transition:all 0.2s ease; }
+.galaxy-experience .panel-close-btn:hover { background:rgba(236,72,153,0.4); border-color:#ec4899; color:#ffffff; transform:rotate(90deg); box-shadow:0 0 20px rgba(236,72,153,0.6); }
+.galaxy-experience .panel-title-group { margin-bottom:0.85rem; flex-shrink:0; }
+.galaxy-experience .component-title { font-size:1.55rem; font-weight:800; line-height:1.15; color:#ffffff; margin-bottom:0.25rem; letter-spacing:-0.01em; }
+.galaxy-experience .component-subtitle { font-size:0.76rem; color:var(--silver); line-height:1.4; letter-spacing:0.05em; }
+.galaxy-experience .panel-view-presets { display:flex; align-items:center; gap:0.35rem; margin-top:0.55rem; flex-wrap:wrap; }
+.galaxy-experience .view-label { font-size:0.56rem; letter-spacing:0.16em; color:#8fa6c2; font-weight:700; margin-right:0.2rem; }
+.galaxy-experience .view-pill { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14); color:#c7d5e8; padding:0.22rem 0.55rem; border-radius:999px; font-size:0.58rem; letter-spacing:0.12em; cursor:pointer; transition:all 0.2s ease; font-weight:700; }
+.galaxy-experience .view-pill:hover { background:rgba(0,242,254,0.25); border-color:#00f2fe; color:#ffffff; }
+
+/* Tabs */
+.galaxy-experience .panel-tabs { display:flex; gap:0.5rem; border-bottom:1px solid rgba(255,255,255,0.12); padding-bottom:0.5rem; margin-bottom:0.85rem; flex-shrink:0; }
+.galaxy-experience .tab-btn { background:transparent; border:none; color:#8da4be; font-size:0.68rem; letter-spacing:0.2em; font-weight:700; cursor:pointer; padding:0.35rem 0.65rem; transition:all 0.2s ease; position:relative; }
+.galaxy-experience .tab-btn:hover { color:var(--white); }
+.galaxy-experience .tab-btn.is-active { color:#00f2fe; }
+.galaxy-experience .tab-btn.is-active::after { content:''; position:absolute; bottom:-0.65rem; left:0; right:0; height:2px; background:linear-gradient(90deg,#00f2fe,#a855f7); box-shadow:0 0 12px #00f2fe; }
+
+/* Scrollable Content */
+.galaxy-experience .panel-content-scroll { flex:1 1 auto; min-height:0; overflow-y:auto; padding-right:0.4rem; margin-bottom:0.85rem; }
+.galaxy-experience .panel-content-scroll::-webkit-scrollbar { width:4px; }
+.galaxy-experience .panel-content-scroll::-webkit-scrollbar-track { background:rgba(255,255,255,0.04); }
+.galaxy-experience .panel-content-scroll::-webkit-scrollbar-thumb { background:linear-gradient(to bottom,#00f2fe,#a855f7); border-radius:4px; }
+.galaxy-experience .component-overview { color:#cbd5e1; font-size:0.85rem; line-height:1.6; margin-bottom:1.2rem; }
+
+/* Metrics Grid */
+.galaxy-experience .metrics-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:0.7rem; }
+.galaxy-experience .metric-card { padding:0.8rem; background:rgba(16,28,60,0.55); border:1px solid rgba(0,242,254,0.22); border-radius:8px; display:flex; flex-direction:column; gap:0.25rem; transition:all 0.2s ease; }
+.galaxy-experience .metric-card:hover { border-color:rgba(0,242,254,0.5); background:rgba(22,36,75,0.7); box-shadow:0 0 18px rgba(0,242,254,0.15); }
+.galaxy-experience .metric-label { font-size:0.58rem; letter-spacing:0.14em; color:#9cb3ce; text-transform:uppercase; font-weight:600; }
+.galaxy-experience .metric-value { font-size:0.88rem; color:#00f2fe; font-weight:800; letter-spacing:0.04em; text-shadow:0 0 12px rgba(0,242,254,0.4); }
+
+/* Features List */
+.galaxy-experience .features-list { display:flex; flex-direction:column; gap:0.95rem; }
+.galaxy-experience .feature-item { display:flex; gap:0.75rem; align-items:flex-start; }
+.galaxy-experience .feature-bullet { width:7px; height:7px; border-radius:50%; margin-top:0.45rem; flex-shrink:0; box-shadow:0 0 10px currentColor; }
+.galaxy-experience .feature-title { font-size:0.82rem; font-weight:700; color:#ffffff; margin-bottom:0.2rem; }
+.galaxy-experience .feature-desc { font-size:0.76rem; color:#a6bdd4; line-height:1.5; }
+
+/* Materials Box */
+.galaxy-experience .materials-box { padding:1rem; background:rgba(16,28,60,0.55); border:1px solid rgba(0,242,254,0.25); border-radius:8px; margin-bottom:1rem; }
+.galaxy-experience .materials-text { font-size:0.82rem; color:var(--silver); line-height:1.6; margin-top:0.5rem; }
+.galaxy-experience .inspection-tip { display:flex; align-items:center; gap:0.75rem; padding:0.8rem; background:linear-gradient(135deg,rgba(0,242,254,0.1),rgba(168,85,247,0.1)); border:1px dashed rgba(0,242,254,0.45); border-radius:8px; font-size:0.72rem; color:#d8e8f8; line-height:1.4; }
+.galaxy-experience .tip-icon { font-size:1.25rem; color:#00f2fe; animation:spinSlow 6s linear infinite; }
+
+/* Panel Footer */
+.galaxy-experience .panel-footer { display:flex; flex-direction:column; gap:0.75rem; padding-top:0.8rem; border-top:1px solid rgba(255,255,255,0.12); flex-shrink:0; }
+.galaxy-experience .cycle-buttons { display:flex; align-items:center; justify-content:space-between; }
+.galaxy-experience .cycle-btn { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.18); color:var(--silver); padding:0.45rem 0.95rem; font-size:0.65rem; letter-spacing:0.18em; cursor:pointer; border-radius:4px; transition:all 0.2s ease; font-weight:700; }
+.galaxy-experience .cycle-btn:hover { background:linear-gradient(135deg,rgba(0,242,254,0.25),rgba(168,85,247,0.25)); border-color:#00f2fe; color:var(--white); box-shadow:0 0 16px rgba(0,242,254,0.4); }
+.galaxy-experience .component-counter { font-size:0.7rem; color:#9cb3ce; font-family:monospace; }
+.galaxy-experience .reset-btn { width:100%; margin:0; padding:0.8rem 1rem; }
+.galaxy-experience .panel-note { display:block; margin-top:0.8rem; color:#6b829c; font-size:0.62rem; line-height:1.4; }
+
+/* Loader */
+.galaxy-experience .loader { position:fixed; inset:0; z-index:100; background:var(--navy); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1.2rem; transition:opacity 0.6s; }
+.galaxy-experience .loader.out { opacity:0; }
+.galaxy-experience .loader .bar { width:min(280px,65vw); height:3px; background:#111a38; border-radius:999px; overflow:hidden; }
+.galaxy-experience .loader .bar i { display:block; height:100%; background:linear-gradient(90deg,#00f2fe,#a855f7,#ec4899); box-shadow:0 0 16px #00f2fe; }
+.galaxy-experience .loader b { font-weight:400; font-size:0.82rem; letter-spacing:0.18em; background:linear-gradient(90deg,#00f2fe,#a855f7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.galaxy-experience .fallback { position:absolute; inset:0; display:grid; place-content:center; text-align:center; gap:1rem; padding:2rem; color:var(--silver); }
+
+/* Hotspot Pills */
+.galaxy-experience .hotspot-pill { display:flex; align-items:center; gap:0.55rem; padding:0.4rem 0.9rem; background:linear-gradient(135deg,rgba(6,16,38,0.88),rgba(28,10,48,0.88)); border:1px solid rgba(0,242,254,0.6); border-radius:999px; backdrop-filter:blur(10px); cursor:pointer; box-shadow:0 0 20px rgba(0,242,254,0.3),0 0 40px rgba(168,85,247,0.2); transition:all 0.25s cubic-bezier(0.16,1,0.3,1); pointer-events:auto; user-select:none; white-space:nowrap; }
+.galaxy-experience .hotspot-pill:hover, .galaxy-experience .hotspot-pill.is-hovered { background:linear-gradient(135deg,rgba(0,242,254,0.4),rgba(236,72,153,0.45)); border-color:#ffffff; transform:scale(1.1); box-shadow:0 0 30px rgba(0,242,254,0.7),0 0 60px rgba(236,72,153,0.45); }
+.galaxy-experience .hotspot-pulse { width:8px; height:8px; border-radius:50%; background:#00f2fe; box-shadow:0 0 10px #00f2fe,0 0 16px #a855f7; }
+.galaxy-experience .hotspot-label { font-size:0.65rem; letter-spacing:0.18em; font-weight:700; color:#ffffff; text-transform:uppercase; }
+
+/* Responsive */
+@media (max-width: 860px) {
+  .galaxy-experience .nav-links a { margin-left: 1rem; }
+  .galaxy-experience .orbit-controls-bar { top:72px; left:50%; transform:translateX(-50%); width:auto; }
+  .galaxy-experience .detail-panel { top:auto; bottom:0; right:0; left:0; transform:none; width:100%; max-height:52vh; border-radius:18px 18px 0 0; padding:1.3rem; }
+  .galaxy-experience .hero-copy { bottom:14vh; }
+  .galaxy-experience .caption { top:110px; }
+  .galaxy-experience .solo-hud-banner { top:72px; font-size:0.6rem; padding:0.35rem 0.8rem; width:90vw; justify-content:center; }
+  .galaxy-experience .component-dock { bottom:1.2rem; }
+  .galaxy-experience .component-dock.is-solo-mode { bottom:calc(52vh + 0.6rem); left:50%; transform:translateX(-50%); }
+}
+
+/* ========================================================
+   LIGHT MODE for Galaxy Experience
+   ======================================================== */
+body.theme-light .galaxy-experience { background:radial-gradient(ellipse 90% 70% at 50% 15%,#ffffff 0%,#f1f5f9 50%,#e2e8f0 100%); color:#0f172a; }
+body.theme-light .galaxy-experience .nav { background:linear-gradient(to bottom,rgba(255,255,255,0.94),transparent); }
+body.theme-light .galaxy-experience .nav .logo { color:#0f172a; }
+body.theme-light .galaxy-experience .nav-links a { color:#475569; }
+body.theme-light .galaxy-experience .nav-links a:hover { color:#0284c7; text-shadow:0 0 10px rgba(2,132,199,0.4); }
+body.theme-light .galaxy-experience .theme-toggle-btn { background:rgba(15,23,42,0.06); border-color:rgba(2,132,199,0.35); color:#0f172a; }
+body.theme-light .galaxy-experience .theme-toggle-btn:hover { background:rgba(2,132,199,0.15); border-color:#0284c7; box-shadow:0 0 15px rgba(2,132,199,0.25); }
+body.theme-light .galaxy-experience .hero-copy { text-shadow:none; }
+body.theme-light .galaxy-experience .hero-copy h1 { background:linear-gradient(135deg,#0f172a 15%,#0284c7 50%,#6d28d9 85%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; filter:drop-shadow(0 4px 20px rgba(2,132,199,0.2)); }
+body.theme-light .galaxy-experience .hero-copy p { color:#475569; }
+body.theme-light .galaxy-experience .hero-badge { background:rgba(2,132,199,0.08); border-color:rgba(2,132,199,0.35); color:#0284c7; box-shadow:0 0 15px rgba(2,132,199,0.15); }
+body.theme-light .galaxy-experience .btn { color:#0f172a; background:linear-gradient(135deg,rgba(2,132,199,0.12),rgba(124,58,237,0.14)); border-color:rgba(2,132,199,0.5); box-shadow:0 4px 20px rgba(2,132,199,0.15); }
+body.theme-light .galaxy-experience .btn:hover { background:linear-gradient(135deg,rgba(2,132,199,0.22),rgba(124,58,237,0.24)); box-shadow:0 6px 25px rgba(2,132,199,0.25); }
+body.theme-light .galaxy-experience .hero-btn-secondary { background:rgba(255,255,255,0.85); border-color:rgba(2,132,199,0.4); color:#0f172a; }
+body.theme-light .galaxy-experience .orbit-controls-bar { background:linear-gradient(135deg,rgba(255,255,255,0.94),rgba(241,245,249,0.94)); border-color:rgba(2,132,199,0.3); box-shadow:0 10px 30px rgba(0,0,0,0.08); }
+body.theme-light .galaxy-experience .orbit-btn { background:rgba(2,132,199,0.1); border-color:rgba(2,132,199,0.4); color:#0284c7; }
+body.theme-light .galaxy-experience .orbit-btn:hover, body.theme-light .galaxy-experience .orbit-btn.is-active { background:linear-gradient(135deg,#0284c7,#7c3aed); color:#ffffff; }
+body.theme-light .galaxy-experience .preset-btn { background:rgba(15,23,42,0.05); border-color:rgba(15,23,42,0.1); color:#475569; }
+body.theme-light .galaxy-experience .preset-btn:hover { background:rgba(2,132,199,0.15); border-color:#0284c7; color:#0284c7; }
+body.theme-light .galaxy-experience .solo-hud-banner { background:linear-gradient(135deg,rgba(255,255,255,0.92),rgba(241,245,249,0.92)); border-color:rgba(2,132,199,0.4); color:#0284c7; box-shadow:0 10px 30px rgba(0,0,0,0.08); }
+body.theme-light .galaxy-experience .caption b { color:#0f172a; }
+body.theme-light .galaxy-experience .caption-sub { background:linear-gradient(90deg,#0284c7,#7c3aed); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+body.theme-light .galaxy-experience .component-dock .dock-pill-group { background:linear-gradient(135deg,rgba(255,255,255,0.92),rgba(241,245,249,0.92)); border-color:rgba(2,132,199,0.3); box-shadow:0 10px 35px rgba(0,0,0,0.08); }
+body.theme-light .galaxy-experience .dock-btn { background:rgba(15,23,42,0.04); border-color:rgba(15,23,42,0.08); color:#334155; }
+body.theme-light .galaxy-experience .dock-btn:hover { background:rgba(2,132,199,0.12); border-color:#0284c7; color:#0284c7; }
+body.theme-light .galaxy-experience .dock-btn.is-active { background:linear-gradient(135deg,rgba(2,132,199,0.2),rgba(124,58,237,0.2)); border-color:#0284c7; color:#0284c7; }
+body.theme-light .galaxy-experience .detail-panel { background:linear-gradient(160deg,rgba(255,255,255,0.95) 0%,rgba(248,250,252,0.95) 100%); border-color:rgba(2,132,199,0.3); box-shadow:0 25px 60px rgba(0,0,0,0.1),0 0 35px rgba(2,132,199,0.15); }
+body.theme-light .galaxy-experience .component-title { color:#0f172a; }
+body.theme-light .galaxy-experience .component-subtitle { color:#64748b; }
+body.theme-light .galaxy-experience .component-overview { color:#334155; }
+body.theme-light .galaxy-experience .metric-card { background:rgba(241,245,249,0.85); border-color:rgba(2,132,199,0.2); }
+body.theme-light .galaxy-experience .metric-label { color:#64748b; }
+body.theme-light .galaxy-experience .metric-value { color:#0284c7; text-shadow:none; }
+body.theme-light .galaxy-experience .feature-title { color:#0f172a; }
+body.theme-light .galaxy-experience .feature-desc { color:#475569; }
+body.theme-light .galaxy-experience .materials-box { background:rgba(241,245,249,0.85); border-color:rgba(2,132,199,0.2); }
+body.theme-light .galaxy-experience .materials-text { color:#334155; }
+body.theme-light .galaxy-experience .inspection-tip { background:rgba(2,132,199,0.08); border-color:rgba(2,132,199,0.35); color:#1e293b; }
+body.theme-light .galaxy-experience .panel-close-btn { background:rgba(15,23,42,0.06); border-color:rgba(15,23,42,0.12); color:#475569; }
+body.theme-light .galaxy-experience .panel-close-btn:hover { background:rgba(239,68,68,0.15); border-color:#ef4444; color:#ef4444; }
+body.theme-light .galaxy-experience .cycle-btn { background:rgba(15,23,42,0.05); border-color:rgba(15,23,42,0.12); color:#334155; }
+body.theme-light .galaxy-experience .cycle-btn:hover { background:rgba(2,132,199,0.15); border-color:#0284c7; color:#0284c7; }
+body.theme-light .galaxy-experience .tab-btn { color:#64748b; }
+body.theme-light .galaxy-experience .tab-btn.is-active { color:#0284c7; }
+body.theme-light .galaxy-experience .tab-btn.is-active::after { background:#0284c7; box-shadow:0 0 10px #0284c7; }
+body.theme-light .galaxy-experience .view-pill { background:rgba(15,23,42,0.06); border-color:rgba(15,23,42,0.12); color:#475569; }
+body.theme-light .galaxy-experience .view-pill:hover { background:rgba(2,132,199,0.15); border-color:#0284c7; color:#0284c7; }
+body.theme-light .galaxy-experience .hotspot-pill { background:rgba(255,255,255,0.94); border-color:rgba(2,132,199,0.45); box-shadow:0 4px 15px rgba(0,0,0,0.1); }
+body.theme-light .galaxy-experience .hotspot-label { color:#0f172a; }
+body.theme-light .galaxy-experience .loader { background:#eaeff5; }
+
+/* Keyframes used by Galaxy Experience */
+@keyframes pulseDot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.55;transform:scale(1.3)} }
+@keyframes drip { 0%{transform:translateY(-100%)} 100%{transform:translateY(100%)} }
+@keyframes spinSlow { to{transform:rotate(360deg)} }
+@keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(25px)} to{opacity:1;transform:translateY(-50%)} }
+@keyframes fadeDown { from{opacity:0;transform:translateY(-10px)} to{opacity:1;transform:translateY(0)} }
